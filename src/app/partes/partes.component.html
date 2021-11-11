@@ -1,0 +1,100 @@
+<div class="gg"></div>
+<div class="data-entry">
+    <div class="card">
+        <h6 class="title-h6">PRIMERA EXPRESION</h6>
+        <div class="input-div">
+            <mat-form-field class="example-full-width" appearance="fill" >
+                <mat-label>Expresion:</mat-label>
+                <input matInput  id="input1" #input1>
+            </mat-form-field>
+        </div>
+        <div class="function-type-buttons">
+            <div class="funtion-type" [ngClass]="{'selected1': expresion1.inversa}" (click)="todoNegativo1() && expresion1.inversa = !expresion1.inversa">
+                INVERSA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion1.logaritmica}" (click)="todoNegativo1() && expresion1.logaritmica = !expresion1.logaritmica">
+                LOGARITMICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion1.aritmetica}" (click)="todoNegativo1() && expresion1.aritmetica = !expresion1.aritmetica">
+                ALGEBRAICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion1.trigonometrica}" (click)="todoNegativo1() && expresion1.trigonometrica = !expresion1.trigonometrica">
+                TRIGONOMETRICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion1.exponencial}" (click)="todoNegativo1() && expresion1.exponencial = !expresion1.exponencial">
+                EXPONENCIAL
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h6 class="title-h6">SEGUNDA EXPRESION</h6>
+        <div class="input-div">
+            <mat-form-field class="example-full-width" appearance="fill" >
+                <mat-label>Expresion:</mat-label>
+                <input matInput  id="input2"  #inputVI>
+            </mat-form-field>
+        </div>
+        <div class="function-type-buttons">
+            <div class="funtion-type" [ngClass]="{'selected1': expresion2.inversa}" (click)="todoNegativo2() && expresion2.inversa = !expresion2.inversa">
+                INVERSA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion2.logaritmica}" (click)="todoNegativo2() && expresion2.logaritmica = !expresion2.logaritmica">
+                LOGARITMICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion2.aritmetica}" (click)="todoNegativo2() && expresion2.aritmetica = !expresion2.aritmetica">
+                ALGEBRAICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion2.trigonometrica}" (click)="todoNegativo2() && expresion2.trigonometrica = !expresion2.trigonometrica">
+                TRIGONOMETRICA
+            </div>
+            <div class="funtion-type" [ngClass]="{'selected1': expresion2.exponencial}" (click)="todoNegativo2() && expresion2.exponencial = !expresion2.exponencial">
+                EXPONENCIAL
+            </div>
+        </div>
+    </div>
+</div>
+<div class="buttons-container" *ngIf="!showResult">
+    <button mat-raised-button color="primary" (click)="calcular()">CALCULAR</button>
+</div>
+<div class="respuesta-box" *ngIf="showResult">
+    <div class="card">
+        <h6 class="title-h6">FORMULA GENERAL</h6>
+        <img src="../../assets/por_partes.png" height="80px;">
+    </div>
+    <div class="card">
+        <h6 class="title-h6">DERIVADAS/INTEGRALES</h6>
+        <div class="cuerpo-udv">
+            <div class="item-udv">
+                <div class="row-udv">
+                    <div class="title">u = </div>
+                    {{u.original}}
+                </div>
+                <div class="row-udv">
+                    <div class="title">du = </div>
+                    {{u.derivada}}
+                </div>
+            </div>
+            <div class="item-udv">
+                <div class="row-udv">
+                    <div class="title">dv = </div>
+                    {{dv.original}}
+                </div>
+                <div class="row-udv">
+                    <div class="title">v = </div>
+                    {{dv.integral}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card">
+        <h6 class="title-h6">RESULTADO</h6>
+        <div class="respuesta">
+            {{respuesta}}
+        </div>
+    </div>
+</div>
+<div class="buttons-container" *ngIf="showResult">
+    <button mat-raised-button color="primary" (click)="cancelar()">ACEPTAR</button>
+</div>

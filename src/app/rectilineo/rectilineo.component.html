@@ -1,0 +1,73 @@
+<div class="gg"></div>
+<div class="card">
+    <h6 class="title-h6">VARIABLES QUE TENGO</h6>
+    <div class="buttons-section">
+        <div class="button-select-1" [ngClass]="{'selected1': lasQueTengo.VI}" (click)="lasQueTengo.VI = !lasQueTengo.VI">VELOCIDAD INICIAL</div>
+        <div class="button-select-1" [ngClass]="{'selected1': lasQueTengo.VF}" (click)="lasQueTengo.VF = !lasQueTengo.VF">VELOCIDAD FINAL</div>
+        <div class="button-select-1" [ngClass]="{'selected1': lasQueTengo.A}" (click)="lasQueTengo.A = !lasQueTengo.A">ACELERACION</div>
+        <div class="button-select-1" [ngClass]="{'selected1': lasQueTengo.T}" (click)="lasQueTengo.T = !lasQueTengo.T">TIEMPO</div>
+        <div class="button-select-1" [ngClass]="{'selected1': lasQueTengo.D}" (click)="lasQueTengo.D = !lasQueTengo.D">DISTANCIA</div>
+    </div>
+</div>
+<div class="card">
+    <h6 class="title-h6">VARIABLE A BUSCAR</h6>
+    <div class="buttons-section">
+        <div class="button-select-2" [ngClass]="{'selected2': laQueBusco.VI}" (click)="todoNegativo() && laQueBusco.VI = !laQueBusco.VI">VELOCIDAD INICIAL</div>
+        <div class="button-select-2" [ngClass]="{'selected2': laQueBusco.VF}" (click)="todoNegativo() && laQueBusco.VF = !laQueBusco.VF">VELOCIDAD FINAL</div>
+        <div class="button-select-2" [ngClass]="{'selected2': laQueBusco.A}" (click)="todoNegativo() && laQueBusco.A = !laQueBusco.A">ACELERACION</div>
+        <div class="button-select-2" [ngClass]="{'selected2': laQueBusco.T}" (click)="todoNegativo() && laQueBusco.T = !laQueBusco.T">TIEMPO</div>
+        <div class="button-select-2" [ngClass]="{'selected2': laQueBusco.D}" (click)="todoNegativo() && laQueBusco.D = !laQueBusco.D">DISTANCIA</div>
+    </div>
+</div>
+<div class="buttons-container">
+    <button mat-raised-button color="primary" (click)="pedirDatos()">ACEPTAR</button>
+</div>
+<div class="error-div" *ngIf="showError.error"> 
+    {{showError.errorMessage}}
+</div>
+<div class="card" *ngIf="showDataInputs">
+    <h6 class="title-h6">INTRODUZCA LOS DATOS</h6>
+    <div class="inputs-section">
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="lasQueTengo.VI">
+            <mat-label>Velocidad Inicial:</mat-label>
+            <input matInput  id="inputVI" type="number" #inputVI>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="lasQueTengo.VF">
+            <mat-label>Velocidad Final:</mat-label>
+            <input matInput  id="inputVF" type="number" #inputVF>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="lasQueTengo.A">
+            <mat-label>Aceleración:</mat-label>
+            <input matInput id="inputA" type="number" #inputA>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="lasQueTengo.T">
+            <mat-label>Tiempo:</mat-label>
+            <input matInput id="inputT" type="number" #inputT>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" *ngIf="lasQueTengo.D">
+            <mat-label>Distancia:</mat-label>
+            <input matInput id="inputD" type="number" #inputD>
+        </mat-form-field>
+    </div>
+</div>
+<div class="buttons-container" *ngIf="showDataInputs">
+    <button mat-raised-button color="primary" (click)="calcular()">ACEPTAR</button>
+    <button mat-raised-button color="secundary" (click)="cancelar()">CANCELAR</button>
+</div>
+<div class="error-div" *ngIf="showError2.error" > 
+    {{showError2.errorMessage}}
+</div>
+<div class="respuesta" *ngIf="showResultado">    
+    <div class="card-respuesta">
+        <h6 class="title-h6">FORMULA ORIGINAL</h6>
+        <img src="{{resultadoImagen}}" style="width: 200px; margin: auto;">
+    </div>
+    <div class="card-respuesta">
+        <h6 class="title-h6">FORMULA DESPEJADA</h6>
+        {{resultadoDespeje}}
+    </div>
+    <div class="card-respuesta">
+        <h6 class="title-h6">RESULTADO</h6>
+        {{resultadoRespuesta}}
+    </div>
+</div>

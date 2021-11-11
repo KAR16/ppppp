@@ -1,0 +1,100 @@
+:host{
+    color: #113650;
+}
+
+.gg{
+    height: 70px;
+}
+
+.data-entry{
+    display: flex;
+    width: 900px;
+    max-width: 90%;
+    margin:auto;
+    flex-wrap: wrap;
+}
+
+
+.input-div{    
+    display: flex;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.card{
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    margin: 12px auto;
+    border: solid 1px #cdcdcd;
+    border-radius: 8px;
+    flex-direction: column;
+    box-shadow: 2px 5px 7px 0px #bebfc2, -12px -12px 24px #ffffff;
+    overflow: hidden;
+    padding: 0 0 12px 0;
+    color: #113650;
+}
+.title-h6{    
+    height: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 4px;
+    border-bottom: solid 1px #cdcdcd;
+    background: #f1f1f1;
+    font-weight: bold;
+    max-height: 1.7em;
+    color: #113650;
+}
+
+.funtion-type{    
+    padding: 6px;
+    border: solid 1px #3f8746;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+    color: #113650;
+    text-align: center;
+}
+
+.selected1{    
+    background: #ddfddb;
+}
+.buttons-container{    
+    width: 800px;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cuerpo-udv{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-udv{
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-udv{
+    display: flex;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.respuesta{
+    font-weight: bold;
+    text-align: center;
+}
+
+.respuesta-box{    
+    width: 800px;
+    margin: auto;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+}

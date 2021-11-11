@@ -1,0 +1,48 @@
+<mat-toolbar>
+    <div class="toolbar-container">
+
+        <button mat-icon-button (click)="toggleNav()">
+            <mat-icon *ngIf="!smallView && !isExpanded" >menu</mat-icon>
+            <mat-icon *ngIf="!smallView && isExpanded">menu_open</mat-icon>
+
+            <mat-icon *ngIf="smallView && !sidenav.opened">menu</mat-icon>
+            <mat-icon *ngIf="smallView && sidenav.opened">menu_open</mat-icon>
+        </button>
+
+
+        <span>Proyecto - Grupo 3</span>
+
+        
+        
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container autosize  class="sidenav-container">    
+
+    <mat-sidenav #sidenav mode="side" opened="true">
+            <div class="nav-container" style="width: 100%; display: flex; ">           
+                
+                <mat-nav-list style="flex-grow: 1;">
+
+                    <mat-list-item style="height: 45px;" (click)="GoTo('Partes')" style="color: var(--primary-text-color);">
+                        <mat-icon mat-list-icon matTooltip="Por partes">functions</mat-icon>
+                        <span *ngIf="isExpanded" class="span-link">Partes</span>
+                    </mat-list-item>
+                    <mat-list-item style="height: 45px;" (click)="GoTo('Sustitucion')" style="color: var(--primary-text-color);">
+                        <mat-icon mat-list-icon matTooltip="Sustitución">add_circle_outline</mat-icon>
+                        <span *ngIf="isExpanded" class="span-link">Sustitución</span>
+                    </mat-list-item>
+                    <mat-list-item style="height: 45px;" (click)="GoTo('Rectilineo')" style="color: var(--primary-text-color);">
+                        <mat-icon mat-list-icon matTooltip="Rectilineo">calculate</mat-icon>
+                        <span *ngIf="isExpanded" class="span-link">Rectilineo</span>
+                    </mat-list-item>
+    
+                </mat-nav-list>
+            </div>
+            
+    </mat-sidenav>
+    <mat-sidenav-content style="margin: 0;" ID="contenedor">
+            <router-outlet>
+            </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
