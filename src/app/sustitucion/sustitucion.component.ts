@@ -78,7 +78,7 @@ export class SustitucionComponent implements OnInit {
       alert("No se pudo calcular la derivada de 3" );
     });
     
-    this.resultado = (this.valor1.replace(" ","").trim() == this.valor2.replace(" ","").trim()).toString();
+    this.resultado = this.resultadoSimple.replaceAll("u", "(" + u + ")");
   }
 
   limpiarTexto(texto:string){
