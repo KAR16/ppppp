@@ -129,7 +129,7 @@ export class PartesComponent implements OnInit {
 
     
 
-    await fetchQuery('https://newton.vercel.app/api/v2/derive/' + this.u.original, 'GET', undefined)
+    await fetchQuery('https://newton.vercel.app/api/v2/derive/' + this.limpiarTexto(this.u.original), 'GET', undefined)
     .then((result:any) =>{
       this.u.derivada = result.result;
       }
@@ -137,7 +137,7 @@ export class PartesComponent implements OnInit {
       alert("No se pudo calcular la derivada de " + this.u.original);
     });
     
-    await fetchQuery('https://newton.vercel.app/api/v2/integrate/' + this.dv.original, 'GET', undefined)
+    await fetchQuery('https://newton.vercel.app/api/v2/integrate/' + this.limpiarTexto(this.dv.original), 'GET', undefined)
     .then((result:any) =>{
       this.dv.integral = result.result;
       }
@@ -154,4 +154,9 @@ export class PartesComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("input1")).value = '';
     (<HTMLInputElement>document.getElementById("input2")).value = '';
   }
+
+  limpiarTexto(texto:string){
+    return texto.replaceAll("+","%2B").replaceAll("/","%2F");
+  }
+
 }

@@ -1,2 +1,67 @@
 <div class="gg"></div>
-<p>sustitucion works!</p>
+<h1>INTEGRACION POR SUSTITUCION</h1>
+<div class="row">    
+    <div class="card-input">
+        <h6 class="title-h6">ENTRADA</h6>
+        <mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>Entrada:</mat-label>
+            <input matInput  id="input1" #input1>
+        </mat-form-field>
+    </div>
+    <div class="card-input">
+        <h6 class="title-h6">U PROPUESTA</h6>
+        <mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>U propuesta:</mat-label>
+            <input matInput  id="input2" #input1>
+        </mat-form-field>
+    </div>
+</div>
+<div class="buttons-container">
+    <button mat-raised-button color="primary" (click)="getResultado()">ACEPTAR</button>
+</div>
+<div class="error-div" *ngIf="showError.error"> 
+    {{showError.errorMessage}}
+</div>
+<div class="card-input">
+    <h6 class="title-h6">U/DERIVADA</h6>
+    <div class="result-row">
+        <div class="title">
+            u = 
+        </div>
+        <div>
+            {{u}}
+        </div>
+    </div>
+    <div class="result-row">
+        <div class="title">
+            du = 
+        </div>
+        <div>
+            {{uDerivada}}
+        </div>
+    </div>
+</div>
+<div class="card-input">
+    <h6 class="title-h6">SIMPLIFICADA</h6>
+    <div class="result-row">
+        <div class="title">
+            ∫{{simple}}
+        </div>
+    </div>
+</div>
+<div class="card-input">
+    <h6 class="title-h6">RESOLUCION</h6>
+    <div class="result-row">
+        <div class="title">
+            {{resultadoSimple}}
+        </div>
+    </div>
+</div>
+<div class="card-input">
+    <h6 class="title-h6">RESULTADO FINAL</h6>
+    <div class="result-row">
+        <div class="title">
+            {{resultado}}
+        </div>
+    </div>
+</div>
