@@ -32,7 +32,11 @@ export class SustitucionComponent implements OnInit {
     //this.getResultado();
   }
 
-  async getResultado(){
+  async calcular(){
+    this.showError = {
+      error: false, 
+      errorMessage: ""
+    };
     let completo = (<HTMLInputElement>document.getElementById("input1")).value;
     let u = (<HTMLInputElement>document.getElementById("input2")).value;
 
@@ -69,7 +73,7 @@ export class SustitucionComponent implements OnInit {
     
     this.u = completo;
     this.uDerivada = derivada;
-
+    //aca se hacen los reemplazos
     let nuevo = completo.replaceAll(" ", "").replaceAll(derivada.replaceAll(" ",""),"1").replaceAll(u.replaceAll(" ",""),"x");
     this.simple = nuevo.replaceAll("x","u") + "du";
     
@@ -81,6 +85,7 @@ export class SustitucionComponent implements OnInit {
       alert("No se pudo calcular la derivada de 3" );
     });
     
+    //aca se regresa el replace
     this.resultado = this.resultadoSimple.replaceAll("u", "(" + u + ")");
     this.showResultado = true;
   }
