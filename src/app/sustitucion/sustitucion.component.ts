@@ -17,11 +17,14 @@ export class SustitucionComponent implements OnInit {
     errorMessage: ""
   };
 
-  u : string = 'x^2 + x';
-  uDerivada : string = 'x^2 + x';
-  simple: string="x^2 + x";
-  resultadoSimple: string="x^2 + x";
-  resultado : string="x^2 + x";
+  u : string = '';
+  uDerivada : string = '';
+  simple: string="";
+  resultadoSimple: string = "";
+  resultado : string = "";
+
+  showResultado : boolean = false;
+
 
   constructor() { }
 
@@ -79,6 +82,7 @@ export class SustitucionComponent implements OnInit {
     });
     
     this.resultado = this.resultadoSimple.replaceAll("u", "(" + u + ")");
+    this.showResultado = true;
   }
 
   limpiarTexto(texto:string){

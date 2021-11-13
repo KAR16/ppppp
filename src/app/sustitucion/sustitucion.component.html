@@ -22,7 +22,7 @@
 <div class="error-div" *ngIf="showError.error"> 
     {{showError.errorMessage}}
 </div>
-<div class="card-input">
+<div class="card-input" *ngIf="showResultado">
     <h6 class="title-h6">U/DERIVADA</h6>
     <div class="result-row">
         <div class="title">
@@ -41,7 +41,7 @@
         </div>
     </div>
 </div>
-<div class="card-input">
+<div class="card-input" *ngIf="showResultado">
     <h6 class="title-h6">SIMPLIFICADA</h6>
     <div class="result-row">
         <div class="title">
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div>
-<div class="card-input">
+<div class="card-input" *ngIf="showResultado">
     <h6 class="title-h6">RESOLUCION</h6>
     <div class="result-row">
         <div class="title">
@@ -57,7 +57,7 @@
         </div>
     </div>
 </div>
-<div class="card-input">
+<div class="card-input" *ngIf="showResultado">
     <h6 class="title-h6">RESULTADO FINAL</h6>
     <div class="result-row">
         <div class="title">

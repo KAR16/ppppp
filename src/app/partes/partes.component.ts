@@ -145,7 +145,7 @@ export class PartesComponent implements OnInit {
       alert("No se pudo calcular la integral de " + this.dv.original);
     });
     
-    this.respuesta = "(" + this.u.original + ") ⋅ (" + this.dv.integral + ") ∫(" + this.dv.integral + ") ⋅ (" + this.u.derivada + ")dx";
+    this.respuesta = "(" + this.u.original + ") ⋅ (" + this.dv.integral + ") - ∫(" + this.dv.integral + ") ⋅ (" + this.u.derivada + ")dx";
     this.showResult = true;
   }
 
